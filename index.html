@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Documents</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+        }
+
+        .download-section {
+            margin-top: 20px;
+        }
+
+        .download-section button {
+            background-color: #4a90e2;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-section button:hover {
+            background-color: #357ab7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Download Your Documents</h1>
+
+        <div class="download-section">
+            <h3>Click the buttons below to download the documents:</h3>
+            <!-- Assuming you already have the documents stored on the server or local path -->
+            <button id="aadharDownloadBtn" class="btn">Download Aadhar Card</button>
+            <button id="cbDownloadBtn" class="btn">Download Bio Data Certificate</button>
+        </div>
+    </div>
+
+    <script>
+        // Links to the documents you want to allow downloading
+        const aadharDownloadLink = 'aadhar.pdf';  // Change this path to where your Aadhar Card file is stored
+        const cbDownloadLink = 'nio.pdf';  // Change this path to where your CB file is stored
+
+        // Set download links for the buttons
+        document.getElementById('aadharDownloadBtn').onclick = function() {
+            const link = document.createElement('a');
+            link.href = aadharDownloadLink;
+            link.download = 'Aadhar_Card.pdf';  // Suggested download filename
+            link.click();
+        };
+
+        document.getElementById('cbDownloadBtn').onclick = function() {
+            const link = document.createElement('a');
+            link.href = cbDownloadLink;
+            link.download = 'Caste_Certificate.pdf';  // Suggested download filename
+            link.click();
+        };
+    </script>
+</body>
+</html>
